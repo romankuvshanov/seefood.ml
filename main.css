@@ -1,0 +1,349 @@
+/* Material icons*/
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('fonts/MaterialIcons-Regular.woff2') format('woff2'),
+    url('fonts/MaterialIcons-Regular.woff') format('woff'),
+    url('fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: local('Comic Sans MS Regular'), local('Comic-Sans-MS-Regular'), local('Comic Sans MS'),
+		url('fonts/ComicSansMS.woff2') format('woff2'),
+        url('fonts/ComicSansMS.woff') format('woff'),
+        url('fonts/ComicSansMS.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* For every page */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: #E4E700;
+}
+
+/*Index page*/
+
+div#start_screen, div#help {
+	height: 100%;
+	width: 100%;
+	display: grid;
+    grid-template-rows: minmax(67px, 20%) minmax(150px, 60%) minmax(40px, 20%);
+	align-items: center;
+    justify-items: center;
+	box-sizing: border-box;
+    padding: 30px 0;
+}
+
+header {
+	width: 100%;
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 36px;
+}
+
+header span, a {
+	text-decoration: none;
+    color: black;
+	font-size: 36px;
+	line-height: 36px;
+	vertical-align: middle;
+}
+
+span#speaker_icon {
+	cursor: pointer;
+}
+
+span#speaker_icon_app {
+	position: fixed;
+    top: 10px;
+    right: 10px;
+    color: white;
+    z-index: 2;
+}
+
+img#logo {
+	height: 70%;
+    width: auto;
+    max-width: 100%;
+	animation: spin 8s linear infinite;
+}
+@keyframes spin {
+	100% { transform: rotate(360deg); }
+}
+
+label {
+    font-size: 13px;
+	font-family: "Arial", sans-serif;
+    background-color: #1b18ff;
+    color: white;
+    border-radius: 40px;
+    padding: 10px 40px;
+	cursor: pointer;
+	border-width: 2px;
+    border-style: outset;
+}
+
+label:active {
+    border-style: inset;
+}
+
+/*App page*/
+
+div#app {
+	height: 100%;
+	width: 100%;
+	display: none;
+    grid-template-rows: minmax(300px, 75%) minmax(110px, 17%) minmax(50px, 8%);
+}
+
+div#app > div {
+	width: 100%;
+	height: 100%;
+}
+
+span#red_circle, span#green_circle{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: inline-block;
+}
+
+span#red_circle {
+	bottom: -50px;
+	background-color: red;
+}
+
+span#green_circle {
+	top: -50px;
+	background-color: green;
+	line-height: 140px;
+}
+
+div#hotdog_caption, div#not_hotdog_caption {
+	position: absolute;
+	width: 100%;
+	color: white;
+	font-family: "Arial", sans-serif;
+	font-size: 32px;
+}
+
+div#hotdog_caption p, div#not_hotdog_caption p  {
+	padding: 10px 0px;
+    position: relative;
+	z-index: 1;
+} 
+
+div#hotdog_caption p {
+	background-color: green;
+}
+
+div#not_hotdog_caption p {
+	background-color: red;
+}
+
+div#not_hotdog_caption {
+	bottom: 0;
+}
+
+div#view {
+	background-color: black;
+    text-align: center;
+	position: relative;
+}
+
+div#view img {
+	height: 100%;
+	max-width: 100%;
+}
+
+div#feedback {
+	display: grid;
+    grid-template-rows: minmax(60px, 45%) minmax(50px, 55%);
+    align-items: center;
+}
+
+div#feedback p {
+	font-size: 20px;
+	text-align: center;
+	font-family: "Arial", sans-serif;
+}
+
+div#yesno_buttons {
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+div#categories_buttons {
+	display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+}
+
+div#categories_buttons > button {
+	cursor: pointer;
+}
+
+button#yes_button {
+	background-color: green;
+	color: white;
+	cursor: pointer;
+}
+
+button#no_button {
+	background-color: red;
+	color: white;
+	cursor:pointer;
+}
+
+p#sucess_message {
+	display: none;
+    align-items: center;
+	justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+div#again label {
+	border-radius: 0;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+}
+
+/*Help page*/
+
+div#help {
+	display: block;
+}
+
+div#help header {
+	min-height: 67px;
+    height: 20%;
+}
+
+#help_caption {
+	font-family: "Comic Sans MS", cursive;
+	font-size: 20px;
+	text-align: center;
+    margin-top: -6vh;
+}
+
+#privacy_notice {
+	margin: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 30px 25px 30px;
+}
+
+div#dos_and_donts {
+	display: grid;
+    width: 100%;
+	justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 1fr 1fr 1fr;
+    row-gap: 65px;
+    column-gap: 25px;
+	box-sizing: border-box;
+    padding: 20px 70px 25px 70px;
+}
+
+div.item {
+	background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 300px;
+}
+
+div.item img {
+	display: block;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+div.item p {
+	font-family: 'Arial', sans-serif;
+}
+
+
+p.do {
+	font-weight: bold;
+    border-top: green 5px solid;
+    display: inline-block;
+    font-size: 20px;
+    color: green;
+}
+
+p.dont {
+	font-weight: bold;
+    border-top: red 5px solid;
+    display: inline-block;
+    font-size: 20px;
+    color: red;
+}
+
+/* Media queries */
+
+@media (max-width: 1100px) {
+	div#dos_and_donts {
+		padding: 20px 0 25px 0;
+		row-gap: 40px;
+	}
+}
+
+@media (min-width: 1300px) {
+	div#dos_and_donts {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}

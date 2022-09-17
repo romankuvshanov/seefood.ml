@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SeeFood - Hot-Dog/Not Hot-Dog image recognition app</title>
+	<link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+	<link href="main.css" rel="stylesheet">
+	<link rel="prefetch" href="model/model.weights.bin" as="fetch" crossorigin>
+	<link rel="prefetch" href="model/model.json" as="fetch" crossorigin>
+	<link rel="prefetch" href="model/metadata.json" as="fetch" crossorigin>
+	<script src="js/tf.min.js"></script>
+	<script src="js/teachablemachine-image.min.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="start_screen">
+		<header>
+			<a id="info_icon" href="help.html"><span class="material-icons md-36">info</span></a>
+			<h1>SeeFood</h1>
+			<span class="material-icons md-36" id="speaker_icon" onclick="switch_sound()">volume_off</span>
+		</header>
+		<img id="logo" src="imgs/icon512px.png" alt="Round spinning logo with hot-dog emoji on blue background">
+		<input hidden id="file" name="uploaded_picture" type="file" accept="image/*" onchange="start(event)">
+		<label for="file">UPLOAD A PICTURE</label>
+	</div>
+	<div id="app">
+		<div id="view">
+			<div hidden id="hotdog_caption">
+				<p id="hot-dog">Hotdog</p>
+				<span id="green_circle">✔</span>				
+			</div>
+			<img id="output" src="imgs/loading_animation.webp" alt="Loading spinnig animation circle">
+			<span class="material-icons md-36" id="speaker_icon_app" onclick="switch_sound()">volume_off</span>
+			<div hidden id="not_hotdog_caption">
+				<span id="red_circle">✖</span>
+				<p id="not-hot-dog">Not Hotdog</p>
+			</div>
+		</div>
+		
+		<div id="feedback">
+			<p id="help_message">HELP US TO IMPROVE: DID WE RECOGNISE IT RIGHT?</p>
+			<div id="yesno_buttons">
+				<button id="yes_button" onclick="yes()">YES</button>
+				<button id="no_button" onclick="no()">NO</button>
+			</div>
+			<div id="categories_buttons">
+				<button id="hotdog_button" onclick="send_picture('hotdog')">HOTDOG</button>
+				<button id="not_hotodog_button" onclick="send_picture('nothotdog')">NOT HOTDOG</button>
+				<button id="other_button" onclick="send_picture('other')">OTHER</button>
+			</div>
+			<p id="sucess_message">GREAT! THANK YOU!</p>
+		</div>
+		
+		<div id="again">
+			<label for="file">UPLOAD A PICTURE AGAIN</label>
+		</div>
+	</div>
+</body>
+</html>
